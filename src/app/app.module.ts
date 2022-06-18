@@ -10,6 +10,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { PlayersComponent } from './players/players.component';
 import { RoundsComponent } from './rounds/rounds.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

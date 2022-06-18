@@ -1,0 +1,31 @@
+h1 {
+  font-size: 400%;
+}
+h3 {
+  margin-bottom: 0%;
+}
+.container {
+    padding: 2%;
+    text-align: center;
+  }
+  .playerWrapper {
+    display: flex;
+  }
+  .playerCard {
+    flex: 50%;
+    margin: 2%;
+  }
+  .scoreBtns > button {
+    margin: 1%;
+    width: 31.3%;
+    height: 80px !important;
+  }
+  .foulBtns > button {
+    margin: 1%;
+    width: 48%;
+    height: 80px !important;
+  }
+  mat-card-title {
+    font-size: 250%;
+    margin-bottom: 5%;
+  }
