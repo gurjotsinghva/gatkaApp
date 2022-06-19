@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/']">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/players']">
+        <mat-icon>people</mat-icon>
+        <span>Players</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/rounds']">
+        <mat-icon>map</mat-icon>
+        <span>Rounds</span>
+      </button>
+    </mat-menu>
+    <button mat-button [routerLink]="['/']">Gatka Tournament Application</button>
+  </mat-toolbar>
