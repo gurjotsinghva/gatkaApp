@@ -2,17 +2,16 @@
 <div class="container">
     <mat-card>
         <div style="text-align: center;">
-            <mat-card-title>2:00</mat-card-title>
+          <countdown mat-card-title #cd [config]="{ leftTime: 120, demand: true }"></countdown>
             <mat-card-subtitle>Match Time</mat-card-subtitle>
         </div>
         <div class="scoreBtns">
-            <button mat-raised-button color="primary">Start</button>
-            <button mat-raised-button color="primary">Pause</button>
-            <button mat-raised-button color="primary">Reset Timer</button>
+            <button mat-raised-button color="primary" (click)="cd.begin()">Start</button>
+            <button mat-raised-button color="primary" (click)="cd.pause()">Pause</button>
+            <button mat-raised-button color="primary" (click)="cd.restart()">Reset Timer</button>
               <br>
             <button mat-raised-button color="basic">+1 second</button>
             <button mat-raised-button color="basic">-1 second</button>
-              <br>
             <button mat-raised-button color="basic">Overtime</button>
           </div>
     </mat-card>
@@ -20,9 +19,9 @@
 <div class="playerWrapper">
     <div class="playerCard">
         <div style="text-align: center;">
-            <h1>Score: 0</h1>
-            <h3>Personal Fouls: 0</h3>
-            <h3>Technical Fouls: 0</h3>
+            <h1>Score: {{ score1 }}</h1>
+            <h3>Personal Fouls: {{ pers1 }}</h3>
+            <h3>Technical Fouls: {{ tech1 }}</h3>
         </div><br>
         <mat-card>
             <div style="text-align: center;">
@@ -30,29 +29,29 @@
                 <mat-card-subtitle>Gatka Akhara</mat-card-subtitle>
             </div>
             <div class="scoreBtns">
-                <button mat-raised-button color="primary">+1</button>
-                <button mat-raised-button color="primary">+2</button>
-                <button mat-raised-button color="primary">+3</button>
+                <button mat-raised-button color="primary" (click)="firstScoreOne()">+1</button>
+                <button mat-raised-button color="primary" (click)="firstScoreTwo()">+2</button>
+                <button mat-raised-button color="primary" (click)="firstScoreThree()">+3</button>
                   <br>
-                <button mat-raised-button color="warn">-1</button>
-                <button mat-raised-button color="warn">-2</button>
-                <button mat-raised-button color="warn">-3</button>
+                <button mat-raised-button color="warn" (click)="firstScoreMinusOne()">-1</button>
+                <button mat-raised-button color="warn" (click)="firstScoreMinusTwo()">-2</button>
+                <button mat-raised-button color="warn" (click)="firstScoreMiusThree()">-3</button>
               </div>
               <br>
               <div class="foulBtns">
-                <button mat-raised-button color="primary">+1 Personal Foul</button>
-                <button mat-raised-button color="primary">+1 Technical Foul</button>
+                <button mat-raised-button color="primary" (click)="personalOneUp()">+1 Personal Foul</button>
+                <button mat-raised-button color="primary" (click)="techOneUp()">+1 Technical Foul</button>
                   <br>
-                <button mat-raised-button color="warn">-1 Personal Foul</button>
-                <button mat-raised-button color="warn">-1 Technical Foul</button>
+                <button mat-raised-button color="warn" (click)="personalOneDown()">-1 Personal Foul</button>
+                <button mat-raised-button color="warn" (click)="techOneDown()">-1 Technical Foul</button>
               </div>
         </mat-card>
     </div>
     <div class="playerCard">
         <div style="text-align: center;">
-            <h1>Score: 0</h1>
-            <h3>Personal Fouls: 0</h3>
-            <h3>Technical Fouls: 0</h3>
+            <h1>Score: {{ score2 }}</h1>
+            <h3>Personal Fouls: {{ pers2 }}</h3>
+            <h3>Technical Fouls: {{ tech2 }}</h3>
         </div><br>
         <mat-card>
             <div style="text-align: center;">
@@ -60,21 +59,21 @@
                 <mat-card-subtitle>Gatka Akhara</mat-card-subtitle>
             </div>
             <div class="scoreBtns">
-              <button mat-raised-button color="primary">+1</button>
-              <button mat-raised-button color="primary">+2</button>
-              <button mat-raised-button color="primary">+3</button>
+              <button mat-raised-button color="primary" (click)="secScoreOne()">+1</button>
+              <button mat-raised-button color="primary" (click)="secScoreTwo()">+2</button>
+              <button mat-raised-button color="primary" (click)="secScoreThree()">+3</button>
                 <br>
-              <button mat-raised-button color="warn">-1</button>
-              <button mat-raised-button color="warn">-2</button>
-              <button mat-raised-button color="warn">-3</button>
+              <button mat-raised-button color="warn" (click)="secScoreMinusOne()">-1</button>
+              <button mat-raised-button color="warn" (click)="secScoreMinusTwo()">-2</button>
+              <button mat-raised-button color="warn" (click)="secScoreMiusThree()">-3</button>
             </div>
             <br>
             <div class="foulBtns">
-              <button mat-raised-button color="primary">+1 Personal Foul</button>
-              <button mat-raised-button color="primary">+1 Technical Foul</button>
+              <button mat-raised-button color="primary" (click)="personalTwoUp()">+1 Personal Foul</button>
+              <button mat-raised-button color="primary" (click)="techTwoUp()">+1 Technical Foul</button>
                 <br>
-              <button mat-raised-button color="warn">-1 Personal Foul</button>
-              <button mat-raised-button color="warn">-1 Technical Foul</button>
+              <button mat-raised-button color="warn" (click)="personalTwoDown()">-1 Personal Foul</button>
+              <button mat-raised-button color="warn" (click)="techTwoDown()">-1 Technical Foul</button>
             </div>
         </mat-card>
     </div>

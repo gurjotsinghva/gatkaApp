@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-rounds',
@@ -7,9 +7,91 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoundsComponent implements OnInit {
 
+  score1 = 0;
+  pers1 = 0;
+  tech1 = 0; 
+
+  score2 = 0;
+  pers2 = 0;
+  tech2 = 0;
+
+  time = 120;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  add(time: number){
+
+  }
+
+  firstScoreOne(){
+    this.score1 += 1;
+  }
+  firstScoreTwo(){
+    this.score1 += 2;
+  }
+  firstScoreThree(){
+    this.score1 += 3;
+  }
+
+  firstScoreMinusOne(){
+    this.score1 -= 1;
+  }
+  firstScoreMinusTwo(){
+    this.score1 -= 2;
+  }
+  firstScoreMiusThree(){
+    this.score1 -= 3;
+  }
+
+  personalOneUp(){
+    this.pers1 += 1;
+  }
+  personalOneDown(){
+    this.pers1 -= 1;
+  }
+
+  techOneUp(){
+    this.tech1 += 1;
+  }
+  techOneDown(){
+    this.tech1 -= 1;
+  }
+
+
+  secScoreOne(){
+    this.score2 += 1;
+  }
+  secScoreTwo(){
+    this.score2 += 2;
+  }
+  secScoreThree(){
+    this.score2 += 3;
+  }
+
+  secScoreMinusOne(){
+    this.score2 -= 1;
+  }
+  secScoreMinusTwo(){
+    this.score2 -= 2;
+  }
+  secScoreMiusThree(){
+    this.score2 -= 3;
+  }
+
+  personalTwoUp(){
+    this.pers2 += 1;
+  }
+  personalTwoDown(){
+    this.pers2 -= 1;
+  }
+
+  techTwoUp(){
+    this.tech2 += 1;
+  }
+  techTwoDown(){
+    this.tech2 -= 1;
+  }
 }

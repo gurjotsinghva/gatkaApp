@@ -9,8 +9,8 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {name: 'Gurjot Singh', akhara: 'DC Gatka Dal', age: 24},
-  {name: 'Jobanpreet Singh', akhara: 'SBASJ Carteret', age: 24},
-  {name: 'Ajaypal Singh', akhara: 'California Gatka Dal', age: 26},
+  {name: 'Jobanpreet Singh', akhara: 'SBASJ Carteret', age: 23},
+  {name: 'Ajaypal Singh', akhara: 'California Gatka Dal', age: 25},
   {name: 'Hardit Singh', akhara: 'DC Gatka Dal/Indiana', age: 13},
   {name: 'Hari Singh', akhara: 'Buffalo Gatka Dal', age: 7},
 ]; 
