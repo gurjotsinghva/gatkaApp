@@ -6,11 +6,14 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./rounds.component.scss']
 })
 export class RoundsComponent implements OnInit {
-
+  name1 = 'Ajaypal Singh';
+  akhara1 = "California Gatka Dal";
   score1 = 0;
   pers1 = 0;
   tech1 = 0; 
 
+  name2 = 'Jobanpreet Singh';
+  akhara2 = 'SBAS Carteret NJ';
   score2 = 0;
   pers2 = 0;
   tech2 = 0;
