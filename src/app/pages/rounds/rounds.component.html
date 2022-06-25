@@ -1,41 +1,13 @@
-<div class="overlayBg">
-  <img src="../../assets/images/gatkalogotr.png" width="5.5%" class="logo" />
-  <img src="../../assets/images/LiveHeaderTr.png" width="21.5%" class="header" />
-  <div>
-    <p class="player2">{{name2}}
-      <br>
-      <span class="akhara">{{akhara2}}</span>
-    </p>
-  </div>
-  <p class="score2">{{score2}}</p>
-  <p class="time"><countdown mat-card-title #cd [config]="{ leftTime: 120, demand: true }" style="
-    color: white; 
-    float: right;
-    text-align: center;
-    font-family: 'Bebas Neue', 'Roboto', sans-serif;
-    font-size: 45px;"></countdown>
-    <br>
-    <span class="akhara">Singhs Seniors</span>
-  </p>
-  <p class="score1">{{score1}}</p>
-  <div>
-    <p class="player1">{{name1}}
-      <br>
-      <span class="akhara">{{akhara1}}</span>
-    </p>
-  </div>
-  
-</div>
 <app-navbar></app-navbar>
 <div class="container">
   <mat-card>
     <div style="text-align: center;">
-      <countdown mat-card-title #cd [config]="{ leftTime: 120, demand: true }"></countdown>
+      <countdown mat-card-title #cd [config]="{ leftTime: 120, demand: true, format: 'm:ss' }"></countdown>
         <mat-card-subtitle>Match Time</mat-card-subtitle>
     </div>
     <div class="scoreBtns">
-      <button mat-raised-button color="primary" (click)="cd.begin()">Start</button>
       <button mat-raised-button color="primary" (click)="cd.pause()">Pause</button>
+      <button mat-raised-button color="primary" (click)="cd.begin()">Start</button>
       <button mat-raised-button color="primary" (click)="cd.restart()">Reset Timer</button>
         <br>
       <button mat-raised-button color="basic">+1 second</button>
@@ -72,16 +44,17 @@
         <button mat-raised-button color="warn" (click)="personalOneDown()">-1 Personal Foul</button>
         <button mat-raised-button color="warn" (click)="techOneDown()">-1 Technical Foul</button>
       </div><br>
-      <form>
+      <form (submit)="p1Update(postForm)" #postForm="ngForm">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Player Name</mat-label>
-          <input matInput>
+          <input matInput type="text" name="name1Upd" #name1Upd="ngModel" ngModel required>
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Gatka Akhara</mat-label>
-          <input matInput>
+          <input matInput type="text" name="akhara1Upd" #akhara1Upd="ngModel" ngModel required>
         </mat-form-field>
+        <button mat-raised-button color="primary" class="button butCenter" type="submit">Update Text</button>
       </form>
   </mat-card>
 </div>
@@ -112,16 +85,17 @@
         <button mat-raised-button color="warn" (click)="personalTwoDown()">-1 Personal Foul</button>
         <button mat-raised-button color="warn" (click)="techTwoDown()">-1 Technical Foul</button>
       </div><br>
-      <form>
+      <form (submit)="p2Update(postForm2)" #postForm2="ngForm">
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Player Name</mat-label>
-          <input matInput>
+          <input matInput type="text" name="name2Upd" #name2Upd="ngModel" ngModel required>
         </mat-form-field>
         <br>
         <mat-form-field class="example-full-width" appearance="fill">
           <mat-label>Gatka Akhara</mat-label>
-          <input matInput>
+          <input matInput type="text" name="akhara2Upd" #akhara2Upd="ngModel" ngModel required>
         </mat-form-field>
+        <button mat-raised-button color="primary" class="button butCenter" type="submit">Update Text</button>
       </form>
     </mat-card>
   </div>

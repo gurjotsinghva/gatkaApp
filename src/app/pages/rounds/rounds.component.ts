@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rounds',
@@ -6,27 +7,34 @@ import { Component, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./rounds.component.scss']
 })
 export class RoundsComponent implements OnInit {
-  name1 = 'Ajaypal Singh';
-  akhara1 = "California Gatka Dal";
+  name1 = '';
+  akhara1 = '';
   score1 = 0;
   pers1 = 0;
   tech1 = 0; 
 
-  name2 = 'Jobanpreet Singh';
-  akhara2 = 'SBAS Carteret NJ';
+  name2 = '';
+  akhara2 = '';
   score2 = 0;
   pers2 = 0;
   tech2 = 0;
 
   time = 120;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
-  add(time: number){
+  p1Update(form: NgForm){
+    this.name1 = form.value.name1Upd;
+    this.akhara1 = form.value.akhara1Upd;
+  }
 
+  p2Update(form: NgForm){
+    this.name2 = form.value.name2Upd;
+    this.akhara2 = form.value.akhara2Upd;
   }
 
   firstScoreOne(){
