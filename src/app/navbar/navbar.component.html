@@ -7,13 +7,17 @@
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
-      <button mat-menu-item [routerLink]="['/players']">
+      <!-- <button mat-menu-item [routerLink]="['/players']">
         <mat-icon>people</mat-icon>
         <span>Players</span>
-      </button>
+      </button> -->
       <button mat-menu-item [routerLink]="['/rounds']">
         <mat-icon>map</mat-icon>
         <span>Rounds</span>
+      </button>
+      <button mat-menu-item [routerLink]="['/overlay']">
+        <mat-icon>live_tv</mat-icon>
+        <span>Overlay</span>
       </button>
     </mat-menu>
     <button mat-button [routerLink]="['/']">Gatka Tournament Application</button>
