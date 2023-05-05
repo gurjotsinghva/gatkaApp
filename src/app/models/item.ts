@@ -9,4 +9,7 @@ export interface Item {
     score2?:number;
 
     bracket?:string;
+
+    minutes?:number;
+    seconds?:number;
   }

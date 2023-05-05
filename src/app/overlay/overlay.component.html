@@ -8,7 +8,11 @@
       </p>
     </div>
     <p class="score2">{{currentGame.score2}}</p>
-    <p class="bracket">{{currentGame.bracket}}</p>
+    <div>
+      <p class="timer">{{ currentGame.minutes < 10 ? '0' + currentGame.minutes : currentGame.minutes}} : {{ currentGame.seconds < 10 ? '0' + currentGame.seconds : currentGame.seconds}}
+      <br><br><span class="bracket">{{currentGame.bracket}}</span>
+    </p>
+    </div>
     <p class="score1">{{currentGame.score1}}</p>
     <div>
       <p class="player1">{{currentGame.name1}}

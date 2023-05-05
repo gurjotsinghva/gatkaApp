@@ -36,6 +36,14 @@ export class ItemService {
     this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
     this.itemDoc.update({score2: s2});
   }
+  editMins(mins: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({minutes: mins});
+  }
+  editSeconds(secs: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({seconds: secs});
+  }
 
   getItems(){
     return this.items;

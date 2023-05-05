@@ -26,6 +26,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { ItemService } from './services/item.service';
 import {Auth, connectAuthEmulator, getAuth, provideAuth} from '@angular/fire/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     RoundsComponent,
     OverlayComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,

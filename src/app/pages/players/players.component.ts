@@ -1,19 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
-
-export interface PeriodicElement {
-  name: string;
-  akhara: string;
-  age: number;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {name: 'Gurjot Singh', akhara: 'DC Gatka Dal', age: 24},
-  {name: 'Jobanpreet Singh', akhara: 'SBASJ Carteret', age: 23},
-  {name: 'Ajaypal Singh', akhara: 'California Gatka Dal', age: 25},
-  {name: 'Hardit Singh', akhara: 'DC Gatka Dal/Indiana', age: 13},
-  {name: 'Hari Singh', akhara: 'Buffalo Gatka Dal', age: 7},
-]; 
+import { Item } from 'src/app/models/item';
+import { ItemService } from 'src/app/services/item.service';
 
 @Component({
   selector: 'app-players',
@@ -21,17 +8,39 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'akhara', 'age'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  name1 = '';
+  akhara1 = '';
+  score1 = 0;
+  pers1 = 0;
+  tech1 = 0; 
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  name2 = '';
+  akhara2 = '';
+  score2 = 0;
+  pers2 = 0;
+  tech2 = 0;
+
+  bracket = '';
+
+  minutes = 0;
+  seconds = 0;
   
-  constructor() { }
+  currentGame: Item;
+  
+  constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
+    this.itemService.getItems().subscribe(items => {
+      this.currentGame= items[0];
+      this.bracket = this.currentGame.bracket;
+      this.name1 = this.currentGame.name1;
+      this.akhara1 = this.currentGame.akhara1;
+      this.score1 = this.currentGame.score1;
+      this.name2 = this.currentGame.name2;
+      this.akhara2 = this.currentGame.akhara2;
+      this.score2 = this.currentGame.score2;
+      this.minutes = this.currentGame.minutes;
+      this.seconds = this.currentGame.seconds;
+    })
   }
-
 }
