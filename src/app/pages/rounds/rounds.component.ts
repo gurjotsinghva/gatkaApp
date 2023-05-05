@@ -138,4 +138,16 @@ export class RoundsComponent implements OnInit {
   techTwoDown(){
     this.tech2 -= 1;
   }
+  clearBracket(){
+    this.itemService.editp1("", "");
+    this.itemService.editp2("", "");
+    this.itemService.edits1(0);
+    this.itemService.edits2(0);
+    
+    this.tech1 = 0;
+    this.tech2 = 0;
+
+    this.pers1 = 0;
+    this.pers2 = 0;
+  }
 }
