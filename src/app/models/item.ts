@@ -12,4 +12,9 @@ export interface Item {
 
     minutes?:number;
     seconds?:number;
+    
+    pFoul1?:number;
+    pFoul2?:number;
+    tFoul1?:number;
+    tFoul2?:number;
   }

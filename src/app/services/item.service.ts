@@ -44,6 +44,22 @@ export class ItemService {
     this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
     this.itemDoc.update({seconds: secs});
   }
+  editpFouls1(fouls: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({pFoul1: fouls});
+  }
+  editpFouls2(fouls: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({pFoul2: fouls});
+  }
+  edittFouls1(fouls: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({tFoul1: fouls});
+  }
+  edittFouls2(fouls: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({pFoul2: fouls});
+  }
 
   getItems(){
     return this.items;

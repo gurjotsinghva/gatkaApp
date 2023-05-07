@@ -38,6 +38,10 @@ export class RoundsComponent implements OnInit {
       this.name2 = this.currentGame.name2;
       this.akhara2 = this.currentGame.akhara2;
       this.score2 = this.currentGame.score2;
+      this.pers1 = this.currentGame.pFoul1;
+      this.pers2 = this.currentGame.pFoul2
+      this.tech1 = this.currentGame.tFoul1;
+      this.tech2 = this.currentGame.tFoul2;
     })
   }
 
@@ -86,16 +90,28 @@ export class RoundsComponent implements OnInit {
 
   personalOneUp(){
     this.pers1 += 1;
+    this.score1 -= 1;
+    this.itemService.editpFouls1(this.pers1);
+    this.itemService.edits1(this.score1);
   }
   personalOneDown(){
     this.pers1 -= 1;
+    this.score1 += 1;
+    this.itemService.editpFouls1(this.pers1);
+    this.itemService.edits1(this.score1);
   }
 
   techOneUp(){
     this.tech1 += 1;
+    this.score1 -= 1;
+    this.itemService.edittFouls1(this.tech1);
+    this.itemService.edits1(this.score1);
   }
   techOneDown(){
     this.tech1 -= 1;
+    this.score1 += 1;
+    this.itemService.edittFouls1(this.tech1);
+    this.itemService.edits1(this.score1);
   }
 
 
@@ -127,16 +143,28 @@ export class RoundsComponent implements OnInit {
 
   personalTwoUp(){
     this.pers2 += 1;
+    this.score2 -= 1;
+    this.itemService.editpFouls2(this.pers2);
+    this.itemService.edits2(this.score2);
   }
   personalTwoDown(){
     this.pers2 -= 1;
+    this.score2 += 1;
+    this.itemService.editpFouls2(this.pers2);
+    this.itemService.edits2(this.score2);
   }
 
   techTwoUp(){
     this.tech2 += 1;
+    this.score2 -= 1;
+    this.itemService.edittFouls2(this.tech2);
+    this.itemService.edits2(this.score2);
   }
   techTwoDown(){
     this.tech2 -= 1;
+    this.score2 += 1;
+    this.itemService.edittFouls2(this.tech2);
+    this.itemService.edits2(this.score2);
   }
   clearBracket(){
     this.itemService.editp1("", "");
