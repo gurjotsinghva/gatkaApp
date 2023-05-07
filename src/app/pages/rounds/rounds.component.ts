@@ -171,11 +171,9 @@ export class RoundsComponent implements OnInit {
     this.itemService.editp2("", "");
     this.itemService.edits1(0);
     this.itemService.edits2(0);
-    
-    this.tech1 = 0;
-    this.tech2 = 0;
-
-    this.pers1 = 0;
-    this.pers2 = 0;
+    this.itemService.editpFouls1(0);
+    this.itemService.editpFouls2(0);
+    this.itemService.edittFouls1(0);
+    this.itemService.edittFouls2(0);
   }
 }

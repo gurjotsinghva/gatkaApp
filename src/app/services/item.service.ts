@@ -58,7 +58,7 @@ export class ItemService {
   }
   edittFouls2(fouls: number) {
     this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
-    this.itemDoc.update({pFoul2: fouls});
+    this.itemDoc.update({tFoul2: fouls});
   }
 
   getItems(){
