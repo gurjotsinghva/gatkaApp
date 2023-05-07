@@ -8,10 +8,11 @@ import { ItemService } from '../services/item.service';
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
-  minutes: number = 2;
-  seconds: number = 0;
+  minutes: number;
+  seconds: number;
   intervalId: any;
   isPaused: boolean = false;
+  isRunning: boolean = false;
 
   currentGame: Item;
 
@@ -20,28 +21,33 @@ export class TimerComponent implements OnInit {
   ngOnInit(): void {
     this.itemService.getItems().subscribe(items => {
       this.currentGame= items[0];
-      console.log(items);
+      this.minutes = this.currentGame.minutes;
+      this.seconds = this.currentGame.seconds;
     })
   }
 
   startCountdown(): void {
-    this.intervalId = setInterval(() => {
-      if (!this.isPaused) {
-        if (this.seconds === 0) {
-          if (this.minutes === 0) {
-            clearInterval(this.intervalId);
-            return;
+    if (!this.isRunning) {
+      this.intervalId = setInterval(() => {
+        if (!this.isPaused) {
+          if (this.seconds === 0) {
+            if (this.minutes === 0) {
+              clearInterval(this.intervalId);
+              this.isRunning = false;
+              return;
+            } else {
+              this.minutes--;
+              this.seconds = 59;
+            }
           } else {
-            this.minutes--;
-            this.seconds = 59;
+            this.seconds--;
           }
-        } else {
-          this.seconds--;
         }
-      }
-      this.itemService.editMins(this.minutes);
-      this.itemService.editSeconds(this.seconds);
-    }, 1000);
+        this.itemService.editMins(this.minutes);
+        this.itemService.editSeconds(this.seconds);
+      }, 1000);
+      this.isRunning = true;
+    }
   }
 
   pauseCountdown(): void {
@@ -57,6 +63,7 @@ export class TimerComponent implements OnInit {
     this.seconds = 0;
     clearInterval(this.intervalId);
     this.isPaused = false;
+    this.isRunning = false;
     this.itemService.editMins(this.minutes);
     this.itemService.editSeconds(this.seconds);
   }
@@ -65,6 +72,6 @@ export class TimerComponent implements OnInit {
     this.minutes = 0;
     this.seconds = 30;
     this.itemService.editMins(this.minutes);
-      this.itemService.editSeconds(this.seconds);
+    this.itemService.editSeconds(this.seconds);
   }
 }
