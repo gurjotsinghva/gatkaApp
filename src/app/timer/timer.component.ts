@@ -20,13 +20,13 @@ export class TimerComponent implements OnInit {
 
   ngOnInit(): void {
     this.itemService.getItems().subscribe(items => {
-      this.currentGame= items[0];
+      this.currentGame = items[0];
       this.minutes = this.currentGame.minutes;
       this.seconds = this.currentGame.seconds;
-    })
+    });
   }
 
-  startCountdown(): void {
+  startOrResumeCountdown(): void {
     if (!this.isRunning) {
       this.intervalId = setInterval(() => {
         if (!this.isPaused) {
@@ -47,15 +47,13 @@ export class TimerComponent implements OnInit {
         this.itemService.editSeconds(this.seconds);
       }, 1000);
       this.isRunning = true;
+    } else {
+      this.isPaused = false; // Resume the countdown by setting isPaused to false
     }
   }
 
   pauseCountdown(): void {
     this.isPaused = true;
-  }
-
-  resumeCountdown(): void {
-    this.isPaused = false;
   }
 
   resetCountdown(): void {
@@ -73,5 +71,89 @@ export class TimerComponent implements OnInit {
     this.seconds = 30;
     this.itemService.editMins(this.minutes);
     this.itemService.editSeconds(this.seconds);
+  }
+
+  addFiveSeconds(): void {
+    const totalSeconds = this.minutes * 60 + this.seconds; // Convert minutes to seconds and add current seconds
+    let newTotalSeconds = totalSeconds + 5; // Add 5 seconds
+  
+    if (newTotalSeconds < 0) {
+      newTotalSeconds = 0; // Ensure the new total seconds is not negative
+    }
+  
+    if (this.isRunning) {
+      clearInterval(this.intervalId);
+    }
+  
+    // Calculate new minutes and seconds
+    this.minutes = Math.floor(newTotalSeconds / 60);
+    this.seconds = newTotalSeconds % 60;
+  
+    this.itemService.editMins(this.minutes);
+    this.itemService.editSeconds(this.seconds);
+  
+    if (this.isRunning) {
+      this.intervalId = setInterval(() => {
+        if (!this.isPaused) {
+          if (this.seconds === 0) {
+            if (this.minutes === 0) {
+              clearInterval(this.intervalId);
+              this.isRunning = false;
+              return;
+            } else {
+              this.minutes--;
+              this.seconds = 59;
+            }
+          } else {
+            this.seconds--;
+          }
+        }
+  
+        this.itemService.editMins(this.minutes);
+        this.itemService.editSeconds(this.seconds);
+      }, 1000);
+    }
+  }
+  
+  subtractFiveSeconds(): void {
+    const totalSeconds = this.minutes * 60 + this.seconds; // Convert minutes to seconds and add current seconds
+    let newTotalSeconds = totalSeconds - 5; // Subtract 5 seconds
+  
+    if (newTotalSeconds < 0) {
+      newTotalSeconds = 0; // Ensure the new total seconds is not negative
+    }
+  
+    if (this.isRunning) {
+      clearInterval(this.intervalId);
+    }
+  
+    // Calculate new minutes and seconds
+    this.minutes = Math.floor(newTotalSeconds / 60);
+    this.seconds = newTotalSeconds % 60;
+  
+    this.itemService.editMins(this.minutes);
+    this.itemService.editSeconds(this.seconds);
+  
+    if (this.isRunning) {
+      this.intervalId = setInterval(() => {
+        if (!this.isPaused) {
+          if (this.seconds === 0) {
+            if (this.minutes === 0) {
+              clearInterval(this.intervalId);
+              this.isRunning = false;
+              return;
+            } else {
+              this.minutes--;
+              this.seconds = 59;
+            }
+          } else {
+            this.seconds--;
+          }
+        }
+  
+        this.itemService.editMins(this.minutes);
+        this.itemService.editSeconds(this.seconds);
+      }, 1000);
+    }
   }
 }

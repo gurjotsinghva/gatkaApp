@@ -7,9 +7,10 @@
         </h1>
     </div>
   
-    <button mat-raised-button color="primary" (click)="startCountdown()">Start</button>
-    <button mat-raised-button color="primary" (click)="pauseCountdown()">Pause</button>
-    <button mat-raised-button color="primary" (click)="resumeCountdown()">Resume</button>
-    <button mat-raised-button color="primary" (click)="resetCountdown()">2 minutes</button>
+    <button mat-raised-button color="primary" (click)="startOrResumeCountdown()">Start Time</button>
+    <button mat-raised-button color="primary" (click)="pauseCountdown()">Pause Time</button>
+    <button mat-raised-button color="primary" (click)="resetCountdown()">2 mins</button>
     <button mat-raised-button color="primary" (click)="setThirtySeconds()">30 Seconds</button>
+    <button mat-raised-button color="primary" (click)="addFiveSeconds()">Add 5</button>
+    <button mat-raised-button color="primary" (click)="subtractFiveSeconds()">Sub 5</button>
 </div>
