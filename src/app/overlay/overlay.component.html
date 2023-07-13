@@ -1,23 +1,39 @@
 <div class="overlayBg">
-    <img src="../../assets/images/gatkalogotr.png" width="5.5%" class="logo" />
-    <img src="../../assets/images/MEJ23.png" width="21.5%" class="header" />
+  <img src="../../assets/images/MEJ23.png" width="18.5%" class="header" />  
+  <div class="player-container">
+    <p class="score1">{{currentGame.score1}}</p>
+    <p class="player1">{{currentGame.name1}}</p>
+    <p class="akhara1">{{currentGame.akhara1}}</p>
+  </div>
+  <div class="fouls-container">
+    <p class="fouls">P: {{currentGame.pFoul1}}</p>
+    <p class="fouls">T: {{currentGame.tFoul1}}</p>
+  </div>
+  <div class="player-container">
+    <p class="timer">{{ currentGame.minutes < 10 ? '0' + currentGame.minutes : currentGame.minutes}} : {{ currentGame.seconds < 10 ? '0' + currentGame.seconds : currentGame.seconds}}</p>
+    <p class="bracket">{{currentGame.bracket}}</p>
+  </div>
+  <div class="fouls2-container">
+    <p class="fouls">P: {{currentGame.pFoul2}}</p>
+    <p class="fouls">T: {{currentGame.tFoul2}}</p>
+  </div>
+  <div class="player2-container">
+    <p class="score1">{{currentGame.score2}}</p>
+    <p class="player1">{{currentGame.name2}}</p>
+    <p class="akhara1">{{currentGame.akhara2}}</p>
+  </div>
+  <img src="../../assets/images/gatkalogotr.png" width="9%" class="logo" />
+    <!-- <div>
+      <p class="timer">{{ currentGame.minutes < 10 ? '0' + currentGame.minutes : currentGame.minutes}} : {{ currentGame.seconds < 10 ? '0' + currentGame.seconds : currentGame.seconds}}
+      <br><br><span class="bracket">{{currentGame.bracket}}</span>
+    </p>
+    </div>
+    <p class="score2">{{currentGame.score2}}</p>
     <div>
       <p class="player2">{{currentGame.name2}}
         <br>
         <span class="akhara">{{currentGame.akhara2}}</span>
       </p>
-    </div>
-    <p class="score2">{{currentGame.score2}}</p>
-    <div>
-      <p class="timer">{{ currentGame.minutes < 10 ? '0' + currentGame.minutes : currentGame.minutes}} : {{ currentGame.seconds < 10 ? '0' + currentGame.seconds : currentGame.seconds}}
-      <br><br><span class="bracket">{{currentGame.bracket}}</span>
-    </p>
-    </div>
-    <p class="score1">{{currentGame.score1}}</p>
-    <div>
-      <p class="player1">{{currentGame.name1}}
-        <br>
-        <span class="akhara">{{currentGame.akhara1}}</span>
-      </p>
-    </div>
+    </div> 
+    <img src="../../assets/images/gatkalogotr.png" width="5.5%" class="logo" /> -->
   </div>
