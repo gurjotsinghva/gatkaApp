@@ -73,9 +73,9 @@ export class TimerComponent implements OnInit {
     this.itemService.editSeconds(this.seconds);
   }
 
-  addFiveSeconds(): void {
+  addOneSec(): void {
     const totalSeconds = this.minutes * 60 + this.seconds; // Convert minutes to seconds and add current seconds
-    let newTotalSeconds = totalSeconds + 5; // Add 5 seconds
+    let newTotalSeconds = totalSeconds + 1; // Add 5 seconds
   
     if (newTotalSeconds < 0) {
       newTotalSeconds = 0; // Ensure the new total seconds is not negative
@@ -115,9 +115,9 @@ export class TimerComponent implements OnInit {
     }
   }
   
-  subtractFiveSeconds(): void {
+  subtractOneSec(): void {
     const totalSeconds = this.minutes * 60 + this.seconds; // Convert minutes to seconds and add current seconds
-    let newTotalSeconds = totalSeconds - 5; // Subtract 5 seconds
+    let newTotalSeconds = totalSeconds - 1; // Subtract 5 seconds
   
     if (newTotalSeconds < 0) {
       newTotalSeconds = 0; // Ensure the new total seconds is not negative
