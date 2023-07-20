@@ -1,47 +1,80 @@
-h1 {
-    font-size: 400%;
-  }
-  h3 {
-    margin-bottom: 0%;
-  }
-  .container {
-      padding: 2%;
-      text-align: center;
-    }
-    .playerWrapper {
-      display: flex;
-    }
-    .playerCard {
-      flex: 50%;
-      margin: 2%;
-    }
-    .scoreBtns > button {
-      margin: 1%;
-      width: 31.3%;
-      height: 80px !important;
-    }
-    .foulBtns > button {
-      margin: 1%;
-      width: 48%;
-      height: 80px !important;
-    }
-    mat-card-title {
-      font-size: 250%;
-      margin-bottom: 5%;
-    }
-    .example-form {
-      min-width: 150px;
-      max-width: 500px;
-      width: 100%;
-    }
-    
-    .example-full-width {
-      width: 80%;
-      display: block;
-      margin: auto;
-    }
-    .butCenter {
-      width: 40%;
-      display: block;
-      margin: auto;
-    }
+.bg {
+  background-image: url("../../../assets/images/TvOrange.png");
+}
+
+h3 {
+  margin-bottom: 0%;
+}
+
+.container {
+  padding: 2%;
+  text-align: center;
+}
+
+.playerWrapper {
+  display: flex;
+}
+
+.playerCard {
+  flex: 50%;
+  margin: 2%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a raised box shadow */
+  backdrop-filter: blur(10px); /* Adds a blurred effect */
+  background-color: rgba(255, 255, 255, 0.2); /* Adds a semi-transparent background */
+}
+
+.tournament-info {
+  font-size: 100%;
+  padding-bottom: 20px; /* Add some padding to create space below the bracket */
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a raised box shadow */
+  backdrop-filter: blur(10px); /* Adds a blurred effect */
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.timer {
+  font-size: 1000%;
+  margin-top: 100px; /* Add some margin to create space above the timer */
+  padding-bottom: 50px;
+}
+
+.header {
+  width: 40%;
+}
+
+.player-info {
+  text-align: center;
+  font-size: 300%;
+}
+
+.player-fouls {
+  text-align: center;
+  font-size: 200%;
+}
+
+.bracket {
+  font-size: 400%;
+  margin-top: 50px; /* Add some margin to create space above the timer */
+  padding-top: 50px;
+}
+
+.score {
+  font-size: 300%;
+  padding-bottom: 20px;
+  padding-top: 60px;
+}
+.names {
+  font-size: 150%;
+  margin-top: 50px;
+  padding-bottom: 20px;
+}
+.smallPlayerInfo {
+  font-size: 40%;
+  padding-bottom: 30px;
+}
+
+.akhara {
+  font-size: 80%;
+  padding-bottom: 20px;
+}

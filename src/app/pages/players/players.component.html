@@ -1,39 +1,36 @@
-<div class="container">
-  <img src="../../assets/images/MEJ23Blk.png" width="60%" class="header" />
-
-<mat-card>
-  <div style="text-align: center;">
-    <mat-card-title>{{currentGame.bracket}}</mat-card-title>
-    <h1 class="timer">
-      <span class="countdown-minutes">{{ minutes < 10 ? '0' + minutes : minutes }}</span> :
-      <span class="countdown-seconds">{{ seconds < 10 ? '0' + seconds : seconds }}</span>
-  </h1>
-  </div>
-</mat-card>
-</div><br>
-<div class="playerWrapper">
-  <div class="playerCard">
-    <mat-card>
-      <div style="text-align: center;">
-        <mat-card-title>{{currentGame.name1}}: {{ currentGame.score1 }}</mat-card-title>
-        <mat-card-subtitle>{{currentGame.akhara1}}</mat-card-subtitle>
-          <div style="text-align: center;">
-            <h3>Personal Fouls: {{ pers1 }}</h3>
-            <h3>Technical Fouls: {{ tech1 }}</h3>
-          </div>
-      </div>
-  </mat-card>
-</div>
-<div class="playerCard">
-  <mat-card>
-    <div style="text-align: center;">
-      <mat-card-title>{{currentGame.name2}}: {{ currentGame.score2 }}</mat-card-title>
-      <mat-card-subtitle>{{currentGame.akhara2}}</mat-card-subtitle>
-        <div style="text-align: center;">
-          <h3>Personal Fouls: {{ pers2 }}</h3>
-          <h3>Technical Fouls: {{ tech2 }}</h3>
-        </div>
+<div class="bg">
+  <div class="container">
+    <img src="../../assets/images/MEJ23Blk.png" class="header" />
+    <div class="tournament-info">
+      <h1 class="bracket">{{ currentGame.bracket }}</h1>
+      <h1 class="timer">
+        <span class="countdown-minutes">{{ minutes < 10 ? '0' + minutes : minutes }}</span> :
+        <span class="countdown-seconds">{{ seconds < 10 ? '0' + seconds : seconds }}</span>
+      </h1>
     </div>
-    </mat-card>
+  </div>
+  <div class="playerWrapper">
+    <div class="playerCard">
+      <div class="player-info">
+        <h2 class="score">{{ currentGame.score1 }}</h2>
+        <h2 class="names">{{ currentGame.name1 }}</h2>
+        <h3 class="akhara">{{ currentGame.akhara1 }}</h3>
+        <div class="player-fouls">
+          <h3 class="smallPlayerInfo">Personal Fouls: {{ pers1 }}</h3>
+          <h3 class="smallPlayerInfo">Technical Fouls: {{ tech1 }}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="playerCard">
+      <div class="player-info">
+        <h2 class="score">{{ currentGame.score2 }}</h2>
+        <h2 class="names">{{ currentGame.name2 }}</h2>
+        <h3 class="akhara">{{ currentGame.akhara2 }}</h3>
+        <div class="player-fouls">
+          <h3 class="smallPlayerInfo">Personal Fouls: {{ pers2 }}</h3>
+          <h3 class="smallPlayerInfo">Technical Fouls: {{ tech2 }}</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
