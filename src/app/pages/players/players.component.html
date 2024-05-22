@@ -1,6 +1,6 @@
 <div class="bg">
   <div class="container">
-    <img src="../../assets/images/MEJ23Blk.png" class="header" />
+    <img src="../../assets/images/JES24Logo.png" class="header" />
     <div class="tournament-info">
       <h1 class="bracket">{{ currentGame.bracket }}</h1>
       <h1 class="timer">
@@ -16,6 +16,7 @@
         <h2 class="names">{{ currentGame.name1 }}</h2>
         <h3 class="akhara">{{ currentGame.akhara1 }}</h3>
         <div class="player-fouls">
+          <h3 class="smallPlayerInfo">Blocks: {{ currentGame.blocks1 }}</h3>
           <h3 class="smallPlayerInfo">Personal Fouls: {{ currentGame.pFoul1 }}</h3>
           <h3 class="smallPlayerInfo">Technical Fouls: {{ currentGame.tFoul1 }}</h3>
         </div>
@@ -27,6 +28,7 @@
         <h2 class="names">{{ currentGame.name2 }}</h2>
         <h3 class="akhara">{{ currentGame.akhara2 }}</h3>
         <div class="player-fouls">
+          <h3 class="smallPlayerInfo">Blocks: {{ currentGame.blocks2 }}</h3>
           <h3 class="smallPlayerInfo">Personal Fouls: {{ currentGame.pFoul2 }}</h3>
           <h3 class="smallPlayerInfo">Technical Fouls: {{ currentGame.tFoul2 }}</h3>
         </div>

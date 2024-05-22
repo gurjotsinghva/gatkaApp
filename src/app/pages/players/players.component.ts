@@ -20,6 +20,9 @@ export class PlayersComponent implements OnInit {
   pers2 = 0;
   tech2 = 0;
 
+  block1 = 0;
+  block2 = 0;
+
   bracket = '';
 
   minutes = 0;
@@ -41,6 +44,8 @@ export class PlayersComponent implements OnInit {
       this.score2 = this.currentGame.score2;
       this.minutes = this.currentGame.minutes;
       this.seconds = this.currentGame.seconds;
+      this.block1 = this.currentGame.blocks1;
+      this.block2 = this.currentGame.blocks2;
     })
   }
 }

@@ -1,21 +1,5 @@
 <app-navbar></app-navbar>
 <div class="container">
-  <!-- <mat-card>
-    <div style="text-align: center;">
-      <countdown mat-card-title #cd [config]="{ leftTime: 120, demand: true, format: 'm:ss' }"></countdown>
-        <mat-card-subtitle>Match Time</mat-card-subtitle>
-    </div>
-    <div class="scoreBtns">
-      <button mat-raised-button color="primary" (click)="cd.pause()">Pause</button>
-      <button mat-raised-button color="primary" (click)="cd.begin()">Start</button>
-      <button mat-raised-button color="primary" (click)="cd.restart()">Reset Timer</button>
-        <br>
-      <button mat-raised-button color="basic">+1 second</button>
-      <button mat-raised-button color="basic">-1 second</button>
-      <button mat-raised-button color="basic">Overtime</button>
-    </div>
-  </mat-card>
-</div><br> -->
 <mat-card>
   <div style="text-align: center;">
     <mat-card-title>{{currentGame.bracket}}</mat-card-title>
@@ -36,6 +20,7 @@
         <mat-card-title>{{currentGame.name1}}: {{ currentGame.score1 }}</mat-card-title>
         <mat-card-subtitle>{{currentGame.akhara1}}</mat-card-subtitle>
           <div style="text-align: center;">
+            <h3>Blocks: {{ block1 }}</h3>
             <h3>Personal Fouls: {{ pers1 }}</h3>
             <h3>Technical Fouls: {{ tech1 }}</h3>
           </div>
@@ -48,6 +33,11 @@
         <button mat-raised-button color="warn" (click)="firstScoreMinusOne()">-1</button>
         <button mat-raised-button color="warn" (click)="firstScoreMinusTwo()">-2</button>
         <button mat-raised-button color="warn" (click)="firstScoreMiusThree()">-3</button>
+      </div>
+      <br>
+      <div class="blockBtns">
+        <button mat-raised-button color="primary" (click)="blockOneUp()">+1 Block</button>
+        <button mat-raised-button color="warn" (click)="blockOneDown()">-1 Block</button>
       </div>
       <br>
       <div class="foulBtns">
@@ -77,6 +67,7 @@
       <mat-card-title>{{currentGame.name2}}: {{ currentGame.score2 }}</mat-card-title>
       <mat-card-subtitle>{{currentGame.akhara2}}</mat-card-subtitle>
         <div style="text-align: center;">
+          <h3>Blocks: {{ block2 }}</h3>
           <h3>Personal Fouls: {{ pers2 }}</h3>
           <h3>Technical Fouls: {{ tech2 }}</h3>
         </div>
@@ -89,6 +80,11 @@
         <button mat-raised-button color="warn" (click)="secScoreMinusOne()">-1</button>
         <button mat-raised-button color="warn" (click)="secScoreMinusTwo()">-2</button>
         <button mat-raised-button color="warn" (click)="secScoreMiusThree()">-3</button>
+      </div>
+      <br>
+      <div class="blockBtns">
+        <button mat-raised-button color="primary" (click)="blockTwoUp()">+1 Block</button>
+        <button mat-raised-button color="warn" (click)="blockTwoDown()">-1 Block</button>
       </div>
       <br>
       <div class="foulBtns">

@@ -1,6 +1,5 @@
 .bg {
-  background-image: url("../../../assets/images/TvOrange.png");
-  /* bg color is #FDEAD1 */
+  background-image: url("../../../assets/images/moroccan-flower.png");
 }
 
 h3 {
@@ -26,8 +25,8 @@ h3 {
 }
 
 .tournament-info {
-  font-size: 100%;
-  padding-bottom: 20px; /* Add some padding to create space below the bracket */
+  font-size: 70%;
+  padding-bottom: 30px; /* Add some padding to create space below the bracket */
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a raised box shadow */
   backdrop-filter: blur(10px); /* Adds a blurred effect */
@@ -36,8 +35,8 @@ h3 {
 
 .timer {
   font-size: 1000%;
-  margin-top: 100px; /* Add some margin to create space above the timer */
-  padding-bottom: 50px;
+  margin-top: 50px; /* Add some margin to create space above the timer */
+  padding-bottom: 20px;
 }
 
 .header {

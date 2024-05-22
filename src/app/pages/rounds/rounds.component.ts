@@ -21,6 +21,9 @@ export class RoundsComponent implements OnInit {
   pers2 = 0;
   tech2 = 0;
 
+  block1 = 0;
+  block2 = 0;
+
   bracket = '';
 
   currentGame: Item;
@@ -42,6 +45,8 @@ export class RoundsComponent implements OnInit {
       this.pers2 = this.currentGame.pFoul2
       this.tech1 = this.currentGame.tFoul1;
       this.tech2 = this.currentGame.tFoul2;
+      this.block1 = this.currentGame.blocks1;
+      this.block2 = this.currentGame.blocks2;
     })
   }
 
@@ -166,6 +171,30 @@ export class RoundsComponent implements OnInit {
     this.itemService.edittFouls2(this.tech2);
     this.itemService.edits2(this.score2);
   }
+  blockOneUp(){
+    this.block1 += 1;
+    this.score1 += 1;
+    this.itemService.editblocks1(this.block1);
+    this.itemService.edits1(this.score1);
+  }
+  blockOneDown(){
+    this.block1 -= 1;
+    this.score1 -= 1;
+    this.itemService.editblocks1(this.block1);
+    this.itemService.edits1(this.score1);
+  }
+  blockTwoUp(){
+    this.block2 += 1;
+    this.score2 += 1;
+    this.itemService.editblocks2(this.block2);
+    this.itemService.edits2(this.score2);
+  }
+  blockTwoDown(){
+    this.block2 -= 1;
+    this.score2 -= 1;
+    this.itemService.editblocks2(this.block2);
+    this.itemService.edits2(this.score2);
+  }
   clearBracket(){
     this.itemService.editp1("", "");
     this.itemService.editp2("", "");
@@ -175,5 +204,7 @@ export class RoundsComponent implements OnInit {
     this.itemService.editpFouls2(0);
     this.itemService.edittFouls1(0);
     this.itemService.edittFouls2(0);
+    this.itemService.editblocks1(0);
+    this.itemService.editblocks2(0);
   }
 }

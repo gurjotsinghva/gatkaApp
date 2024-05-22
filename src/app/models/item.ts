@@ -17,4 +17,7 @@ export interface Item {
     pFoul2?:number;
     tFoul1?:number;
     tFoul2?:number;
+
+    blocks1?:number;
+    blocks2?:number;
   }

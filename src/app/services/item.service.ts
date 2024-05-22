@@ -60,6 +60,14 @@ export class ItemService {
     this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
     this.itemDoc.update({tFoul2: fouls});
   }
+  editblocks1(blocks: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({blocks1: blocks});
+  }
+  editblocks2(blocks: number) {
+    this.itemDoc = this.afs.doc('/items/ohwLmkNmu0E8AD7iYTGk');
+    this.itemDoc.update({blocks2: blocks});
+  }
 
   getItems(){
     return this.items;
